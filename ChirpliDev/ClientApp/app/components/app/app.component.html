@@ -1,0 +1,140 @@
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://chirp.li/">Chirpli</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container" id="intro">
+            <div class="row" style="position:relative">
+                <div class="col-sm-12" id="intro-top">
+                    <div class="col-sm-12 col-md-4 col-md-offset-1 home-logo">
+                        <h1 class="logo">CHIRP<span>LI</span></h1>
+                    </div>
+                    <div class="col-sm-12 col-md-6 home-description">
+                        <h3>Get Tweet's JSON</h3>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-10 col-md-offset-1" id="intro-bottom">
+                    <form>
+                        <input class="form-control" required minlength="5" #tweetId placeholder="Tweeet ID or url..." type="text">
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-10 col-md-offset-1 home-description">
+
+                    <button class="btn btn-md btn-default" (click)="process(tweetId.value);" readonly="false">
+                        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate">
+                        </span>Process
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="results" class="container" *ngIf="json">
+            <span class="input-group-btn">
+                <button *ngIf="isValidRequest" class="btn btn-default" [class.btn-success]="isCopied" type="button" [cbContent]="json" (cbOnSuccess)="isCopied = true" ngxClipboard>copy</button>
+            </span>
+            <div id="">
+                <div class="row" style="position:relative">
+                    <input #inputTarget value="{{json}}" type="hidden" />
+                    <ngx-json-viewer *ngIf="isValidRequest" [json]="asset"></ngx-json-viewer>
+                    <pre class="invalid_input" *ngIf="!isValidRequest">Invalid Input</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section  -->
+        <section id="about" data-scroll-index="0">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h2>What is Chirpli?</h2>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <p>Chirply is a web application that allows users to obtain<strong> Tweet's JSON </strong>quickly and easily without authentication. It was made to facilitate parsing Twitter's JSON data and extracting useful information like geo codes.</p>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- END About Section -->
+
+
+        <div class="container" id="edit">
+            <div class="row ads ads-header">
+                <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3382105397230132" data-ad-slot="9181883323" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" width="728" height="90" frameborder="0"></iframe></ins></ins></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="row ads ads-footer">
+                <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3382105397230132" data-ad-slot="9181883323" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:728px;height:90px;" width="728" height="90" frameborder="0"></iframe></ins></ins></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="default-footer seo-footer">
+        <div class="col-md-10 col-md-offset-1">
+            <br /><br />
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <a href="">@CHIRPLI</a>
+                    <h6>Built by <a target="_blank" href="http://www.nextideatech.com">NEXT IDEA TECH</a></h6>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+                    <!-- Analytics -->
+                    <script type="text/javascript">
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-922912-34']);
+                        _gaq.push(['_trackPageview']);
+
+                        (function () {
+                            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                        })();
+                    </script>
+
+
+
+
+
+
+</body>
