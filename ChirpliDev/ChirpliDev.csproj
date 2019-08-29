@@ -29,7 +29,7 @@
       <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.0.0\ref\netcoreapp2.0\System.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="TwitterApi">
-      <HintPath>..\..\LinqToTwitter-master\Samples\net46\CSharp\ConsoleSamples\bin\Release\TwitterApi.dll</HintPath>
+      <HintPath>TwitterApi.dll</HintPath>
     </Reference>
   </ItemGroup>
 

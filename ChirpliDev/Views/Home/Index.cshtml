@@ -3,6 +3,15 @@
 }
 
 <app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69885110-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-69885110-2');
+</script>
 
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
 @section scripts {
